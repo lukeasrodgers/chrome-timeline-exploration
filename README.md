@@ -37,6 +37,12 @@ selected. This will provide greater detail on memory usage.
 - drag bars for the timeframe out to encompass the whole time period
   captured
 
+"explicit DOM node count" is attained by
+
+```
+document.getElementsByTagName('*').length
+```
+
 ## test 1
 
 Just a static page.
@@ -156,6 +162,14 @@ no-no).
 
 ## test 8
 
-- test 8 - mini backbone app
-  - explicit node count on load: 517
-  - 1-1,1682-1682 -> 1-2,1682-3677
+This is a mini backbone app. Includes jQuery, underscore 1.4.3 and
+Backbone 0.9.2. Basically just creates a collection, renders some views
+with its models.
+
+Here, Chrome's DOM node count runs up to to about 4x the # of DOM nodes
+reported by explicit DOM node count.
+
+- explicit DOM nodes: 517
+- Chrome DOM node count: 1682-3677 (1995)
+- no GC triggered
+  - manual GC reduces DOM node count back down to 1682
