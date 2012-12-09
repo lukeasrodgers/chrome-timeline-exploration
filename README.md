@@ -12,7 +12,14 @@ The first number seems to provide a sort of baseline: the second number
 will never fall below the first number, but appears to increase with
 creation of new DOM elements and decrease with GC.
 
-## Some caveats
+## Caveat Developer
+
+I am not a Google chrome developer, nor anything remotely resembling an
+expert on garbage collectors or memory profiling. This work was borne
+out of a practical need to fix performance issues with some Backbone.js
+apps. Corrections, suggestions are most welcome.
+
+## Random notes
 
 It's best to do your debugging/testing when examining memory usage in
 incognito mode as this will avoid recording of activity initated by
@@ -174,3 +181,14 @@ reported by explicit DOM node count.
 - Chrome DOM node count: 1682-3677 (1995)
 - no GC triggered
   - manual GC reduces DOM node count back down to 1682
+
+### test 8a
+
+Same as test 8, but call `render` twice on useresview, unnecessarily. 
+
+- explicit DOM nodes: 517
+- Chrome DOM node count: 1882-5782
+  - GC event collects about 2.75 megs
+  - additional manual GC results reduces Chrome DOM node count back down
+    to 1882
+
