@@ -138,7 +138,8 @@ Same as 6d, but wrap the js in an IIFE `(function() {}())`.
 - Chrome DOM node count: 30-72 (42)
   - manually running GC reduces DOM node count back to 30
   - `frag` along with its clone, and all children are GC'ed. Similar
-    profile to 6b, except there `frag` could not be GC'ed.
+    profile to 6b, except there `frag` could not be GC'ed because it's a
+global variable.
 - one GC event with between .25 and .5 megs GC'ed
 
 ### test 6f
