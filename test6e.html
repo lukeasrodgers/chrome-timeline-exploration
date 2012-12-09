@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM node test 6e</title>
+  </head>
+  <body>
+    <h1>test 6e</h1>
+    <p id="text">DOM node count: 40 - 81</p>
+    <script>
+      (function() {
+        var els = [],
+        frag = document.createDocumentFragment();
+        for (var i = 0; i < 10; i++) {
+          els[i] = document.createElement('p');
+          frag.appendChild(els[i]);
+        }
+        document.getElementsByTagName('body')[0].appendChild(frag.cloneNode(true));
+      }());
+    </script>
+  </body>
+</html>

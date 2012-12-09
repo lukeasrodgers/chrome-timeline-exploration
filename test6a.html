@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM node test 6a</title>
+  </head>
+  <body>
+    <h1>test 6a</h1>
+    <p id="text">DOM node count: 29 - 58</p>
+    <script>
+      var els = [],
+      len = 0;
+      for (var i = 0; i < 10; i++) {
+        els[i] = document.createElement('p');
+        document.getElementsByTagName('body')[0].appendChild(els[i]);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM node test 6c</title>
+  </head>
+  <body>
+    <h1>test 6c</h1>
+    <p id="text">DOM node count: 30 - 60</p>
+    <script>
+      var els = [],
+      frag = document.createDocumentFragment();
+      for (var i = 0; i < 10; i++) {
+        els[i] = document.createElement('p');
+        frag.appendChild(els[i]);
+      }
+      document.getElementsByTagName('body')[0].appendChild(frag);
+    </script>
+  </body>
+</html>
